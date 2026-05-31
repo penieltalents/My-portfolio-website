@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Raphael Fabunmi &mdash; Content Strategist &amp; Digital Marketing Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080B10;--bg2:#0D1117;--sur:rgba(255,255,255,.04);--bdr:rgba(255,255,255,.08);
+  --gold:#E8B84B;--gold2:#F5D07A;--gf:rgba(232,184,75,.08);
+  --white:#F8F5EF;--muted:#7A8899;
+  --fd:'Syne',sans-serif;--fs:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--fs);overflow-x:hidden;cursor:none}
+#cur{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s}
+#cur2{width:32px;height:32px;border:1.5px solid rgba(232,184,75,.45);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;background:rgba(8,11,16,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr)}
+.logo{font-family:var(--fd);font-size:1.4rem;font-weight:800;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-btn{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:.5rem 1.3rem;border-radius:3px;text-decoration:none;transition:all .2s}
+.nav-btn:hover{background:var(--gold2);transform:translateY(-1px)}
+#hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:4rem;padding:9rem 5% 5rem;position:relative;overflow:hidden}
+.hglow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(232,184,75,.1) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none}
+.hglow2{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(14,124,107,.08) 0%,transparent 70%);bottom:-100px;left:5%;pointer-events:none}
+.hl{position:relative;z-index:1}
+.htag{display:inline-flex;align-items:center;gap:.5rem;font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:var(--gf);border:1px solid rgba(232,184,75,.2);padding:.35rem .9rem;border-radius:20px;margin-bottom:2rem}
+.hdot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1.hn{font-family:var(--fd);font-size:clamp(3.5rem,7vw,6rem);font-weight:800;line-height:.93;color:var(--white);margin-bottom:.8rem}
+h1.hn .acc{color:var(--gold);display:block}
+.hsub{font-size:clamp(.95rem,1.6vw,1.15rem);color:rgba(248,245,239,.6);line-height:1.7;max-width:500px;margin-bottom:1.5rem}
+.hsub strong{color:var(--white)}
+.hdesc{font-size:.92rem;color:rgba(248,245,239,.42);line-height:1.85;max-width:460px;margin-bottom:2.5rem}
+.hbtns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-g{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:.85rem 2rem;border-radius:3px;text-decoration:none;transition:all .25s}
+.btn-g:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,184,75,.3)}
+.btn-o{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);border:1px solid rgba(248,245,239,.2);padding:.85rem 2rem;border-radius:3px;text-decoration:none;transition:all .25s}
+.btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.socials{display:flex;gap:.7rem}
+.soc{width:38px;height:38px;border-radius:50%;border:1px solid var(--bdr);display:grid;place-items:center;color:var(--muted);text-decoration:none;transition:all .2s}
+.soc:hover{border-color:var(--gold);color:var(--gold);background:var(--gf)}
+.soc svg{width:15px;height:15px}
+.hr{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
+.pw{position:relative;width:340px}
+.po{border-radius:16px;overflow:hidden;border:1px solid rgba(232,184,75,.25);background:var(--bg2)}
+.po img{width:100%;display:block}
+.pd1{position:absolute;bottom:-16px;right:-16px;width:100px;height:100px;border:2px solid rgba(232,184,75,.25);border-radius:12px;z-index:-1}
+.pd2{position:absolute;top:-12px;left:-12px;width:60px;height:60px;border:1px solid rgba(232,184,75,.15);border-radius:8px;z-index:-1}
+.pb1{position:absolute;bottom:20px;left:-30px;background:var(--bg2);border:1px solid rgba(232,184,75,.25);border-radius:10px;padding:.75rem 1rem;min-width:120px}
+.pb1-n{font-family:var(--fd);font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1}
+.pb1-l{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+.pb2{position:absolute;top:20px;right:-30px;background:var(--bg2);border:1px solid rgba(232,184,75,.25);border-radius:10px;padding:.75rem 1rem;min-width:110px;text-align:right}
+#mq{padding:1.3rem 0;background:var(--gold);overflow:hidden}
+.mt{display:flex;width:max-content;animation:mqs 30s linear infinite}
+.mi{font-family:var(--fd);font-size:.95rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bg);white-space:nowrap;padding:0 2rem}
+@keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{padding:6rem 5%}
+.wrap{max-width:1200px;margin:0 auto}
+.slbl{font-size:.63rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+.slbl::before{content:'';width:22px;height:1px;background:var(--gold)}
+.stitle{font-family:var(--fd);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:.8rem}
+.stitle em{color:var(--gold);font-style:normal}
+.ssub{font-size:.93rem;color:var(--muted);max-width:500px;line-height:1.8}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.on{opacity:1;transform:none}
+#about{background:var(--bg2)}
+.ag{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;margin-top:3.5rem;align-items:start}
+.at p{font-size:.92rem;color:rgba(248,245,239,.58);line-height:1.9;margin-bottom:1rem}
+.at p strong{color:var(--white)}
+.stl{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:1.8rem 0 .8rem}
+.stags{display:flex;flex-wrap:wrap;gap:.45rem}
+.stag{font-size:.73rem;background:var(--gf);border:1px solid rgba(232,184,75,.15);color:rgba(248,245,239,.75);padding:.28rem .75rem;border-radius:20px;transition:all .2s}
+.stag:hover{background:rgba(232,184,75,.15);border-color:var(--gold);color:var(--gold)}
+.acs{display:flex;flex-direction:column;gap:1rem}
+.ac{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:1.3rem;display:flex;gap:.9rem;align-items:flex-start;transition:border-color .3s}
+.ac:hover{border-color:rgba(232,184,75,.25)}
+.ac-ic{width:38px;height:38px;background:var(--gf);border-radius:7px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.ac-l{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.ac-v{font-size:.86rem;color:var(--white)}
+.ac-v a{color:var(--gold);text-decoration:none}
+#stats{background:linear-gradient(135deg,#081008 0%,#080B10 60%,#0A1020 100%);padding:4.5rem 5%}
+.sr{display:grid;grid-template-columns:repeat(4,1fr)}
+.sc{padding:2.5rem 2rem;border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.sc:last-child{border-right:none}
+.sn{font-family:var(--fd);font-size:clamp(2.4rem,4vw,4rem);font-weight:800;color:var(--gold);line-height:1}
+.sl2{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+.sf{font-size:.7rem;color:rgba(122,136,153,.45);margin-top:.3rem}
+#companies{background:var(--bg);padding:5rem 5%}
+.ch{text-align:center;margin-bottom:3rem}
+.ch .slbl{justify-content:center}
+.ch .slbl::before{display:none}
+.cg{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem}
+.cc{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:1.1rem 1.6rem;display:flex;align-items:center;gap:.8rem;transition:all .3s;text-decoration:none;color:inherit}
+.cc:hover{border-color:rgba(232,184,75,.3);background:var(--gf);transform:translateY(-3px)}
+.ci{width:34px;height:34px;border-radius:6px;display:grid;place-items:center;font-size:1rem;flex-shrink:0}
+.cn{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--white)}
+.cr{font-size:.65rem;color:var(--muted)}
+#experience{background:var(--bg2)}
+.ew{margin-top:3.5rem;position:relative}
+.ew::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.ei{padding-left:2.6rem;margin-bottom:3.2rem;position:relative}
+.ei::before{content:'';position:absolute;left:-4px;top:.4rem;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(232,184,75,.12)}
+.eh{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.eco{font-size:.63rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:var(--gf);border:1px solid rgba(232,184,75,.2);padding:.18rem .7rem;border-radius:3px}
+.edt{font-size:.73rem;color:var(--muted)}
+.elc{font-size:.7rem;color:rgba(122,136,153,.5)}
+.er{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.7rem}
+.el{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.el li{font-size:.88rem;color:rgba(248,245,239,.52);padding-left:1.2rem;position:relative;line-height:1.7}
+.el li::before{content:'›';position:absolute;left:0;color:var(--gold)}
+.el li strong{color:var(--white)}
+.hll{color:var(--gold2);font-weight:600}
+.el a{color:var(--gold);text-decoration:none}
+#casestudy{background:linear-gradient(160deg,#060E08 0%,#080B10 100%)}
+.csg{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem}
+.csg + .csg{margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07)}
+.csco{font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.csco a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(232,184,75,.3)}
+.csg h3{font-family:var(--fd);font-size:1.75rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:1rem}
+.csg p{font-size:.88rem;color:rgba(248,245,239,.52);line-height:1.85;margin-bottom:.9rem}
+.css2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2rem}
+.cst{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:1.1rem;border-top:2px solid var(--gold)}
+.cst-n{font-family:var(--fd);font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1}
+.cst-l{font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.csc{display:flex;flex-direction:column;gap:.9rem}
+.csc-card{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:1.3rem;transition:border-color .3s}
+.csc-card:hover{border-color:rgba(232,184,75,.25)}
+.csc-tag{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
+.csc-card p{font-size:.86rem;color:rgba(248,245,239,.58);line-height:1.7}
+.csc-card p strong{color:var(--white)}
+#work{background:var(--bg)}
+.frow{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0 2rem}
+.fbtn{font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.38rem .9rem;border-radius:20px;border:1px solid var(--bdr);color:var(--muted);background:transparent;cursor:pointer;transition:all .2s}
+.fbtn.on,.fbtn:hover{border-color:var(--gold);color:var(--gold);background:var(--gf)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.pub-card{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;text-decoration:none;transition:all .3s;overflow:hidden}
+.pub-card:hover{border-color:rgba(232,184,75,.3);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+.pub-outlet{font-size:.59rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.38rem}
+.pdot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.pub-title{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--white);line-height:1.4;margin-bottom:.7rem;flex:1}
+.pub-type{font-size:.66rem;color:var(--muted);margin-bottom:.9rem}
+.pub-cta{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.3rem;transition:gap .2s}
+.pub-card:hover .pub-cta{gap:.65rem}
+.pub-cta::after{content:'&rarr;'}
+#skills{background:var(--bg2)}
+.skg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:3.5rem}
+.skb{background:var(--sur);border:1px solid var(--bdr);border-radius:10px;padding:1.7rem;transition:border-color .3s}
+.skb:hover{border-color:rgba(232,184,75,.2)}
+.skt{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+.skp{display:flex;flex-wrap:wrap;gap:.45rem}
+.sp{font-size:.73rem;background:rgba(248,245,239,.05);border:1px solid var(--bdr);color:rgba(248,245,239,.7);padding:.28rem .75rem;border-radius:20px;transition:all .2s}
+.sp:hover{background:var(--gf);border-color:rgba(232,184,75,.3);color:var(--gold)}
+#contact{background:var(--bg)}
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3.5rem;align-items:start}
+.ctl p{font-size:.92rem;color:rgba(248,245,239,.48);line-height:1.9;margin-bottom:2.5rem}
+.clinks{display:flex;flex-direction:column;gap:.85rem}
+.clink{display:flex;align-items:center;gap:.85rem;color:var(--white);text-decoration:none;font-size:.87rem;transition:color .2s}
+.clink:hover{color:var(--gold)}
+.clic{width:36px;height:36px;background:var(--sur);border:1px solid var(--bdr);border-radius:7px;display:grid;place-items:center;font-size:.85rem;flex-shrink:0;transition:all .2s}
+.clink:hover .clic{background:var(--gf);border-color:rgba(232,184,75,.3)}
+.clic svg{width:14px;height:14px}
+.cform{display:flex;flex-direction:column;gap:.85rem}
+.flbl{font-size:.59rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.3rem}
+.finput,.ftarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:6px;padding:.75rem 1rem;color:var(--white);font-family:var(--fs);font-size:.88rem;transition:border-color .2s;outline:none;resize:none}
+.finput:focus,.ftarea:focus{border-color:var(--gold);background:rgba(232,184,75,.04)}
+.ftarea{height:115px}
+.fsub{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--gold);border:none;border-radius:4px;padding:.85rem 1.8rem;cursor:pointer;transition:all .2s;align-self:flex-start}
+.fsub:hover{background:var(--gold2);transform:translateY(-2px)}
+footer{background:var(--bg2);border-top:1px solid var(--bdr);padding:2rem 5%;display:flex;align-items:center;justify-content:space-between}
+.fcopy{font-size:.73rem;color:var(--muted)}
+.fcopy span{color:var(--gold)}
+.fup{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.fup:hover{color:var(--gold)}
+@media(max-width:860px){
+  nav{padding:.85rem 4%}
+  .nav-links{display:none}
+  #hero{grid-template-columns:1fr;padding:7rem 4% 4rem;gap:3rem}
+  .hr{order:-1}
+  .pw{width:260px;margin:0 auto}
+  .pb1,.pb2{display:none}
+  .ag,.csg,.ctg{grid-template-columns:1fr;gap:2.5rem}
+  .sr{grid-template-columns:repeat(2,1fr)}
+  .sc{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .pgrid{grid-template-columns:1fr}
+  .skg{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.8rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<nav id="topnav">
+  <a href="#hero" class="logo">RF.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#casestudy">Case Studies</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:raphaelfabunmi@gmail.com?subject=Hiring%20Inquiry%20-%20Let%27s%20Work%20Together" class="nav-btn">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="hglow"></div><div class="hglow2"></div>
+  <div class="hl">
+    <div class="htag"><div class="hdot"></div>Open to new projects</div>
+    <h1 class="hn">Raphael<span class="acc">Fabunmi.</span></h1>
+    <p class="hsub"><strong>Content Strategist. Digital Marketer.</strong><br/>I make brands impossible to ignore on the web.</p>
+    <p class="hdesc">From zero to 601,000 impressions. From obscurity to Google&rsquo;s first page &mdash; and now AI citations. I build content ecosystems that rank, convert, and compound.</p>
+    <div class="hbtns">
+      <a href="#work" class="btn-g">See My Work</a>
+      <a href="#contact" class="btn-o">Let&rsquo;s Talk</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/fabunmi-raphael" target="_blank" class="soc" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4V9h4v1.5A6 6 0 0116 8zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.instagram.com/fabunmi_raphael/" target="_blank" class="soc" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+      <a href="mailto:raphaelfabunmi@gmail.com" class="soc" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+    </div>
+  </div>
+  <div class="hr">
+    <div class="pw">
+      <div class="po"><img src="data:image/jpeg;base64,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" alt="Raphael Fabunmi"/></div>
+      <div class="pd1"></div><div class="pd2"></div>
+      <div class="pb1"><div class="pb1-n">15+</div><div class="pb1-l">Yrs Experience</div></div>
+      <div class="pb2"><div class="pb1-n">10+</div><div class="pb1-l" style="text-align:right">Page 1 Rankings</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="mq"><div class="mt">
+  <span class="mi">SEO Strategy &#10022;</span><span class="mi">Content Marketing &#10022;</span><span class="mi">Digital PR &#10022;</span><span class="mi">GEO &amp; AEO &#10022;</span><span class="mi">Technical SEO &#10022;</span><span class="mi">LLM Citations &#10022;</span><span class="mi">On-page SEO &#10022;</span><span class="mi">Content Strategy &#10022;</span><span class="mi">B2B Content &#10022;</span>
+  <span class="mi">SEO Strategy &#10022;</span><span class="mi">Content Marketing &#10022;</span><span class="mi">Digital PR &#10022;</span><span class="mi">GEO &amp; AEO &#10022;</span><span class="mi">Technical SEO &#10022;</span><span class="mi">LLM Citations &#10022;</span><span class="mi">On-page SEO &#10022;</span><span class="mi">Content Strategy &#10022;</span><span class="mi">B2B Content &#10022;</span>
+</div></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="slbl">About Me</div>
+    <h2 class="stitle">I build content that<br/><em>algorithms love</em> &amp; people trust.</h2>
+    <div class="ag reveal">
+      <div class="at">
+        <p>I&rsquo;m a <strong>content strategist and digital marketing expert</strong> with 15+ years of experience turning blank pages into first-page rankings. I build entire content ecosystems &mdash; not just articles &mdash; that drive organic growth, earn LLM citations, and convert audiences into loyal communities.</p>
+        <p>Currently directing content at <strong>TechOrbit</strong> (one of the UK&rsquo;s fastest-growing tech news sites), writing for <strong>Cinnamon PR</strong> (30+ publications monthly across The Guardian, BellaNaija, Guardian UK), and running SEO content at <strong>Creaitz</strong> &mdash; Africa&rsquo;s largest digital skills community &mdash; where I grew organic clicks by 22,200%.</p>
+        <p>I work across <strong>SEO, digital PR, AEO, GEO, email, ad copy, and full content strategy</strong> &mdash; always anchored in data, search intent, and genuine storytelling that earns trust from both humans and machines.</p>
+        <div class="stl">Specialisation</div>
+        <div class="stags">
+          <span class="stag">SEO Strategy</span><span class="stag">Content Strategy</span><span class="stag">Content Optimisation</span><span class="stag">Digital PR</span><span class="stag">Content Marketing</span><span class="stag">Technical SEO</span><span class="stag">On-page SEO</span><span class="stag">GEO</span><span class="stag">AEO</span><span class="stag">LLM Optimisation</span><span class="stag">Email Marketing</span><span class="stag">B2B Content</span><span class="stag">Keyword Research</span>
+        </div>
+      </div>
+      <div class="acs">
+        <div class="ac"><div class="ac-ic">&#128205;</div><div><div class="ac-l">Location</div><div class="ac-v">Osun State, Nigeria &middot; Remote Worldwide</div></div></div>
+        <div class="ac"><div class="ac-ic">&#9999;&#65039;</div><div><div class="ac-l">Current Roles</div><div class="ac-v">Content Director @ TechOrbit &middot; Writer @ Cinnamon PR &middot; SEO Writer @ Creaitz</div></div></div>
+        <div class="ac"><div class="ac-ic">&#128279;</div><div><div class="ac-l">LinkedIn</div><div class="ac-v"><a href="https://linkedin.com/in/fabunmi-raphael" target="_blank">linkedin.com/in/fabunmi-raphael</a></div></div></div>
+        <div class="ac"><div class="ac-ic">&#128248;</div><div><div class="ac-l">Instagram</div><div class="ac-v"><a href="https://instagram.com/fabunmi_raphael" target="_blank">@fabunmi_raphael</a></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats" style="padding:4.5rem 5%">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sc"><div class="sn" data-val="22200" data-sfx="%">22,200%</div><div class="sl2">Organic Click Growth</div><div class="sf">5 &#8594; 3,000 clicks</div></div>
+      <div class="sc"><div class="sn" data-val="43614" data-sfx="%">43,614%</div><div class="sl2">Impression Surge</div><div class="sf">140 &#8594; 601,000</div></div>
+      <div class="sc"><div class="sn" data-val="3657" data-sfx="%">3,657%</div><div class="sl2">Newsletter Growth</div><div class="sf">42 &#8594; 1,580 subscribers</div></div>
+      <div class="sc"><div class="sn" data-val="30" data-sfx="+">30+</div><div class="sl2">Monthly Publications</div><div class="sf">Across 6 top outlets</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="companies" style="background:var(--bg);padding:5rem 5%">
+  <div class="wrap">
+    <div class="ch reveal">
+      <div class="slbl" style="justify-content:center;margin-bottom:.7rem"><span style="width:22px;height:1px;background:var(--gold);display:none"></span>Worked With</div>
+      <h2 class="stitle" style="text-align:center">Brands I&rsquo;ve <em>built for</em></h2>
+    </div>
+    <div class="cg reveal">
+      <a href="https://creaitz.com/" target="_blank" class="cc"><div class="ci" style="background:rgba(232,184,75,.1)">&#127760;</div><div><div class="cn">Creaitz</div><div class="cr">SEO Content Writer</div></div></a>
+      <a href="https://www.techorbit.uk/" target="_blank" class="cc"><div class="ci" style="background:rgba(14,124,107,.12)">&#128225;</div><div><div class="cn">TechOrbit</div><div class="cr">Content Director</div></div></a>
+      <a href="https://www.thecinnamon.io/" target="_blank" class="cc"><div class="ci" style="background:rgba(180,74,42,.12)">&#127919;</div><div><div class="cn">Cinnamon PR</div><div class="cr">Content Writer</div></div></a>
+      <a href="https://mobile-text-alerts.com/" target="_blank" class="cc"><div class="ci" style="background:rgba(50,100,180,.12)">&#128172;</div><div><div class="cn">Mobile Text Alerts</div><div class="cr">Contributing Writer</div></div></a>
+      <a href="https://www.jeffdalzellfitness.com/" target="_blank" class="cc"><div class="ci" style="background:rgba(60,130,80,.12)">&#128170;</div><div><div class="cn">Jeff Dalzell Fitness</div><div class="cr">SEO Expert &middot; Contract</div></div></a>
+      <a href="https://ggsceramic.com/" target="_blank" class="cc"><div class="ci" style="background:rgba(150,100,60,.12)">&#127870;</div><div><div class="cn">GGS Ceramics</div><div class="cr">SEO Writer &amp; Strategist</div></div></a>
+      <a href="https://www.hwselect.com/" target="_blank" class="cc"><div class="ci" style="background:rgba(100,60,150,.12)">&#128269;</div><div><div class="cn">HWselect</div><div class="cr">SEO Expert</div></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="slbl">Experience</div>
+    <h2 class="stitle">Where I&rsquo;ve <em>driven results</em></h2>
+    <div class="ew reveal">
+      <div class="ei">
+        <div class="eh"><span class="eco">TechOrbit</span><span class="edt">2024 &ndash; Present</span><span class="elc">UK &middot; Remote</span></div>
+        <div class="er">Content Director</div>
+        <ul class="el">
+          <li>Lead all content at <strong>one of the UK&rsquo;s fastest-growing tech news sites</strong> &mdash; strategy, editorial direction, and execution.</li>
+          <li>Grew organic presence from zero to <span class="hll">nearly 30 clicks</span>, ranking on SERPs for multiple competitive UK tech keywords.</li>
+          <li>Interviewed and collaborated with <strong>top founders and tech leaders across the UK</strong>, building editorial credibility and industry relationships.</li>
+          <li>Built brand authority to the point where <span class="hll">brands now reach out organically</span> for coverage and collaboration.</li>
+          <li>Covers tech news, investigative features, cybersecurity, AI policy, UK visa guides, and fintech analysis.</li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">Creaitz</span><span class="edt">Jul 2024 &ndash; Present</span><span class="elc">Lagos, Nigeria</span></div>
+        <div class="er">SEO Content Writer</div>
+        <ul class="el">
+          <li>Wrote <strong>80+ SEO-optimised blogs</strong>; <span class="hll">10+ ranking on Google&rsquo;s first page</span> within days of publishing.</li>
+          <li>Drove a <span class="hll">22,200% increase in organic clicks</span> (5 &#8594; 3,000) and <span class="hll">43,614% in impressions</span> (140 &#8594; 601,000).</li>
+          <li>Led content outreach that earned <span class="hll">LLM citations</span> &mdash; AI tools now cite Creaitz as Africa&rsquo;s #1 digital skills community. Ongoing AEO and GEO work.</li>
+          <li>Grew newsletter subscriptions <span class="hll">3,657%</span> (42 &#8594; 1,580) and improved conversion rates by <span class="hll">40%</span>.</li>
+          <li>SEO strategy contributed to generating <span class="hll">$3,000 in community GDP</span> in 3 months through improved visibility and landing page optimisation.</li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">Cinnamon PR</span><span class="edt">May 2025 &ndash; Present</span><span class="elc">Lagos &middot; Remote</span></div>
+        <div class="er">Content Writer</div>
+        <ul class="el">
+          <li>Producing <span class="hll">30+ publications monthly</span> across The Guardian, BellaNaija, Guardian UK, Techpression, Tech Economy, and TechNext.</li>
+          <li>Writing SEO articles, digital PR, social media, email campaigns, and ad copy for diverse tech and lifestyle brands.</li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">Jeff Dalzell Fitness</span><span class="edt">Contract</span><span class="elc">Remote</span></div>
+        <div class="er">SEO Expert</div>
+        <ul class="el">
+          <li>Delivered <span class="hll">5 first-page Google rankings</span> in a highly competitive fitness industry through technical SEO, on-page optimisation, and link building outreach.</li>
+          <li>Grew organic clicks from <span class="hll">~7 to 17 in just one week</span> through focused fixes and keyword-aligned content direction.</li>
+          <li><a href="https://www.jeffdalzellfitness.com/" target="_blank">jeffdalzellfitness.com</a></li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">Mobile Text Alerts</span><span class="edt">May &ndash; Jun 2025</span><span class="elc">New York &middot; Remote</span></div>
+        <div class="er">Contributing Writer</div>
+        <ul class="el">
+          <li>B2B-focused SEO article on SMS marketing strategy and ROI for business decision-makers.</li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">GGS Ceramics</span><span class="edt">Contract</span><span class="elc">Remote</span></div>
+        <div class="er">SEO Writer &amp; Strategist</div>
+        <ul class="el">
+          <li>SEO writing and content strategy for the ceramics brand. <a href="https://ggsceramic.com/" target="_blank">ggsceramic.com</a></li>
+        </ul>
+      </div>
+      <div class="ei">
+        <div class="eh"><span class="eco">HWselect</span><span class="edt">Oct &ndash; Dec 2022</span><span class="elc">UK &middot; Remote</span></div>
+        <div class="er">SEO Expert</div>
+        <ul class="el">
+          <li>20+ SEO-optimised articles targeting senior candidates in fintech, investment management, and IT support.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="casestudy">
+  <div class="wrap">
+    <div class="slbl">Case Studies</div>
+    <h2 class="stitle">The work behind<br/><em>the numbers</em></h2>
+    <div class="csg reveal">
+      <div>
+        <div class="csco">Case Study &mdash; <a href="https://creaitz.com/" target="_blank">Creaitz</a></div>
+        <h3>From invisible to AI-cited: Building Africa&rsquo;s #1 digital skills community on the web</h3>
+        <p>Creaitz had near-zero digital footprint when I joined. No clicks, no impressions, no search presence. Over several months, I built a content engine that didn&rsquo;t just rank &mdash; it earned citations from LLMs like ChatGPT and Perplexity naming Creaitz the top digital skills community in Africa.</p>
+        <p>The strategy combined keyword research, high-intent SEO articles, landing page optimisation, AEO/GEO content structuring, and a newsletter growth funnel &mdash; all compounding together.</p>
+        <div class="css2">
+          <div class="cst"><div class="cst-n">22,200%</div><div class="cst-l">Click Growth</div></div>
+          <div class="cst"><div class="cst-n">601K</div><div class="cst-l">Impressions</div></div>
+          <div class="cst"><div class="cst-n">3,657%</div><div class="cst-l">Newsletter Growth</div></div>
+          <div class="cst"><div class="cst-n">40%</div><div class="cst-l">Conversion Uplift</div></div>
+        </div>
+      </div>
+      <div class="csc">
+        <div class="csc-card"><div class="csc-tag">&#127919; SEO Foundation</div><p>Built the full keyword strategy from scratch &mdash; mapping search intent to content, targeting <strong>&ldquo;earn in dollars,&rdquo; &ldquo;top web3 communities&rdquo;</strong> and 10+ high-value terms.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#9999;&#65039; Content Engine</div><p>Wrote 80+ SEO-optimised articles with <strong>10+ hitting Google&rsquo;s first page within days</strong> of going live.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#129302; AEO &amp; GEO Strategy</div><p>Structured content to earn <strong>LLM citations</strong> across ChatGPT, Perplexity &mdash; Creaitz is now cited as Africa&rsquo;s best digital skills community. Ongoing work.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128200; Conversion Optimisation</div><p>Optimised 80+ landing pages &#8594; <strong>40% conversion uplift</strong> and <strong>$3,000 additional GDP</strong> in 3 months.</p></div>
+      </div>
+    </div>
+    <div class="csg reveal" style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07)">
+      <div>
+        <div class="csco">Case Study &mdash; <a href="https://www.techorbit.uk/" target="_blank">TechOrbit</a></div>
+        <h3>Building editorial authority for one of the UK&rsquo;s fastest-growing tech news sites &mdash; from zero to SERP recognition</h3>
+        <p>When I joined TechOrbit as Content Director, the site had no organic footprint, no editorial voice, and no presence in the UK tech media landscape. I built the entire content operation from the ground up &mdash; defining editorial pillars, setting tone and standards, and producing content across tech news, investigative features, cybersecurity, AI policy, fintech, and UK career guides.</p>
+        <p>The result is a publication that ranks on SERPs, attracts organic collaboration from brands, and has interviewed and worked with top founders across the UK tech space.</p>
+        <div class="css2">
+          <div class="cst"><div class="cst-n">0&#8594;30</div><div class="cst-l">Organic Clicks</div></div>
+          <div class="cst"><div class="cst-n">Multi</div><div class="cst-l">SERP Keywords</div></div>
+          <div class="cst"><div class="cst-n">Organic</div><div class="cst-l">Brand Collabs</div></div>
+          <div class="cst"><div class="cst-n">UK Tech</div><div class="cst-l">Recognition</div></div>
+        </div>
+      </div>
+      <div class="csc">
+        <div class="csc-card"><div class="csc-tag">&#127959;&#65039; Editorial Architecture</div><p>Designed TechOrbit&rsquo;s full content structure &mdash; coverage pillars, editorial standards, and a publishing cadence built for both SEO and credibility.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#127908; Founder &amp; Industry Access</div><p>Interviewed and collaborated with <strong>top founders and tech leaders across the UK</strong>, building editorial relationships that raised TechOrbit&rsquo;s profile in the industry.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128269; Search-Led Strategy</div><p>Applied keyword research and search intent mapping to every vertical &mdash; turning news, features, and guides into <strong>rankable, discoverable assets</strong>.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128226; Organic Brand Traction</div><p><strong>Brands now approach organically</strong> for coverage and collaboration &mdash; a clear signal of editorial credibility and growing UK tech industry recognition.</p></div>
+      </div>
+    </div>
+    <div class="csg reveal" style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07)">
+      <div>
+        <div class="csco">Case Study &mdash; <a href="https://www.jeffdalzellfitness.com/" target="_blank">Jeff Dalzell Fitness</a></div>
+        <h3>5 first-page rankings in one week &mdash; in one of the web&rsquo;s most competitive niches</h3>
+        <p>The fitness and personal training industry is brutally competitive in search. Established brands, high-authority domains, and well-funded blogs dominate SERPs. Getting a fitness site to rank on page one &mdash; for five separate queries &mdash; in a single week required precision, not volume.</p>
+        <p>The approach was surgical: a full technical SEO audit, aggressive on-page optimisation for high-intent keywords, structured internal linking, and targeted link building outreach to build early authority signals fast.</p>
+        <div class="css2">
+          <div class="cst"><div class="cst-n">5</div><div class="cst-l">Page 1 Rankings</div></div>
+          <div class="cst"><div class="cst-n">1 Week</div><div class="cst-l">Time to Results</div></div>
+          <div class="cst"><div class="cst-n">7&#8594;17</div><div class="cst-l">Click Growth</div></div>
+          <div class="cst"><div class="cst-n">Highly<br/>Competitive</div><div class="cst-l">Industry</div></div>
+        </div>
+      </div>
+      <div class="csc">
+        <div class="csc-card"><div class="csc-tag">&#128295; Technical SEO</div><p>Full site audit &mdash; fixing crawl errors, improving page speed, optimising schema markup, and removing technical blockers suppressing rankings.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128196; On-page Optimisation</div><p>Restructured key pages around high-intent fitness keywords &mdash; aligning title tags, headers, meta descriptions, and body copy with search intent.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128279; Link Building Outreach</div><p>Targeted outreach to build <strong>early authority signals</strong> through relevant backlinks &mdash; accelerating Google&rsquo;s trust in updated pages.</p></div>
+        <div class="csc-card"><div class="csc-tag">&#128202; SERP Monitoring</div><p>Daily tracking with rapid adjustments that turned initial gains into <strong>stable page 1 positions</strong> within the week.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="slbl">Published Work</div>
+    <h2 class="stitle">Words living<br/><em>on the web</em></h2>
+    <p class="ssub">Click any card to read the article. TechOrbit, Creaitz, and more &mdash; all real published work.</p>
+    <div class="frow">
+      <button class="fbtn on" onclick="filterCards('all',this)">All</button>
+      <button class="fbtn" onclick="filterCards('ai',this)">AI &amp; Tools</button>
+      <button class="fbtn" onclick="filterCards('tech',this)">Tech &amp; News</button>
+      <button class="fbtn" onclick="filterCards('seo',this)">SEO / Growth</button>
+      <button class="fbtn" onclick="filterCards('b2b',this)">B2B / Marketing</button>
+    </div>
+    <div class="pgrid" id="pg">
+       <a href="https://creaitz.com/best-ai-agent-platforms/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Best AI Agent Platforms to Try in 2025</div><div class="pub-type">AI &middot; Tools Roundup</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/features/sextortion-scam-uk" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Sextortion Scams in the UK: How They Work &amp; Who's at Risk</div><div class="pub-type">Tech Analysis &middot; Cybercrime</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-useclaude-code/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Use Claude Code: A Beginner's Guide</div><div class="pub-type">AI Tools &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/features/cambodia-scam-economy" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Inside Cambodia's Scam Economy: The Dark Side of Tech</div><div class="pub-type">Tech Analysis &middot; Investigation</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://mobile-text-alerts.com/articles/sms-marketing-vs-social-media" target="_blank" class="pub-card" data-cat="b2b"><div class="pub-outlet"><div class="pdot"></div>Mobile Text Alerts</div><div class="pub-title">SMS Marketing vs. Social Media: Which Channel Drives Better ROI?</div><div class="pub-type">B2B &middot; Marketing &middot; SEO</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-use-semrush-sensor-to-boost-seo/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Use SEMrush Sensor to Boost Your SEO</div><div class="pub-type">SEO &middot; Tutorial</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/features/met-police-palantir-ai" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Met Police &amp; Palantir AI: What the Partnership Really Means</div><div class="pub-type">Tech Analysis &middot; AI Policy</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/agentic-ai-meaning/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">What is Agentic AI? Meaning, Uses &amp; How It Works</div><div class="pub-type">AI &middot; Explainer</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/features/lloyds_banking_app_data_exposure" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Lloyds Banking App Data Exposure: What Happened?</div><div class="pub-type">Tech Analysis &middot; FinTech</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/ai-automation-for-beginners/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">AI Automation for Beginners: Where to Start</div><div class="pub-type">AI &middot; Tutorial</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/features/uk-government-phone-spyware-hack" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Government Phone Spyware Hack: The Full Story</div><div class="pub-type">Tech Analysis &middot; Cybersecurity</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/gchq-cyber-defence-anne-keast-butler" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">GCHQ &amp; Cyber Defence: Anne Keast-Butler's Vision</div><div class="pub-type">Tech News &middot; UK Security</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/ai-agent-guide-uses-benefits-build/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">AI Agent Guide: Uses, Benefits &amp; How to Build One</div><div class="pub-type">AI &middot; Deep Dive</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/uk-visa-portal-data-leak" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Visa Portal Data Leak: What We Know</div><div class="pub-type">Tech News &middot; Data Privacy</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/best-free-ai-writing-tools/" target="_blank" class="pub-card" data-cat="ai"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Best Free AI Writing Tools for Creators &amp; Marketers</div><div class="pub-type">AI &middot; Tools</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/ai-safety-guardrails-uk" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">AI Safety Guardrails in the UK: The Latest</div><div class="pub-type">Tech News &middot; AI Policy</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/free-seo-tools-guide/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Free SEO Tools: The Ultimate Guide to Ranking Without Spending</div><div class="pub-type">SEO &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/uk-smartphone-ban-schools-law" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Smartphone Ban in Schools: The New Law Explained</div><div class="pub-type">Tech News &middot; Policy</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/trump-threatens-uk-with-tariffs-over-digital-services-tax" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Trump Threatens UK with Tariffs Over Digital Services Tax</div><div class="pub-type">Tech News &middot; Politics</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/what-is-seo-writing-your-ultimate-guide-to-crafting-search-optimized-content/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">What is SEO Writing? Your Ultimate Guide</div><div class="pub-type">SEO &middot; Explainer</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/uk-tech-kenya-one-node-expansion" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Tech &amp; Kenya: The One Node Expansion</div><div class="pub-type">Tech News &middot; Global</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/search-engine-optimization-meaning/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Search Engine Optimisation: Meaning &amp; Strategy</div><div class="pub-type">SEO &middot; Explainer</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/uk-sanctions-cambodia-scam-centre-crypto" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Sanctions Cambodia Scam Centre Crypto Operations</div><div class="pub-type">Tech News &middot; Crypto</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/personal-brand-on-linkedin/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Build a Personal Brand on LinkedIn</div><div class="pub-type">Personal Branding &middot; Growth</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/news/lloyds-uk-banking-glitch-exposes-customer-data-in-uk-apps" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Lloyds UK Banking Glitch Exposes Customer Data</div><div class="pub-type">Tech News &middot; FinTech</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/cross-border-payment-platforms-for-freelancers/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Best Cross-Border Payment Platforms for Freelancers</div><div class="pub-type">Finance &middot; Freelance</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/career-guide/innovator-founder-visa-business-plan" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Innovator Founder Visa Business Plan: What You Need</div><div class="pub-type">Career &middot; UK Visa</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/best-remote-job-platforms/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Best Remote Job Platforms to Find Work in 2025</div><div class="pub-type">Freelance &middot; Remote</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/career-guide/digital-nomad-visa" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Digital Nomad Visa Guide: Countries, Requirements &amp; Tips</div><div class="pub-type">Career &middot; Visa</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-receive-money-from-abroad-in/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Receive Money from Abroad in Nigeria</div><div class="pub-type">Finance &middot; Nigeria</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/career-guide/uk-innovator-founder-visa" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">UK Innovator Founder Visa: Full Application Guide</div><div class="pub-type">Career &middot; UK Visa</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-use-chatgpt-to-make-money/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Use ChatGPT to Make Money Online</div><div class="pub-type">AI &middot; Monetisation</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://www.techorbit.uk/career-guide/tech-nation-endorsement" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>TechOrbit</div><div class="pub-title">Tech Nation Endorsement: How to Get It &amp; Why It Matters</div><div class="pub-type">Career &middot; UK Tech</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-make-money-on-fiverr-as-a-beginner/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Make Money on Fiverr as a Beginner</div><div class="pub-type">Freelance &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/what-is-upwork-guide/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">What is Upwork? A Complete Guide for Beginners</div><div class="pub-type">Freelance &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/top-web3-communities-to-join-as-a-web3-newbie-in-nigeria/" target="_blank" class="pub-card" data-cat="seo"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Top Web3 Communities to Join - Page 1 on Google</div><div class="pub-type">Web3 &middot; Community &middot; SEO</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/what-is-web3/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">What is Web3? A Plain-English Explainer</div><div class="pub-type">Web3 &middot; Explainer</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/web3-content-marketing/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Web3 Content Marketing: Strategy, Tips &amp; Best Practices</div><div class="pub-type">Web3 &middot; Marketing</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/what-is-web3-marketing/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">What is Web3 Marketing? Everything You Need to Know</div><div class="pub-type">Web3 &middot; Marketing</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/global-talent-visa-uk-requirements/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Global Talent Visa UK: Requirements &amp; How to Apply</div><div class="pub-type">Visa &middot; Career</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/best-newsletter-platforms/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Best Newsletter Platforms for Creators in 2025</div><div class="pub-type">Tools &middot; Creators</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/google-i-o-2025/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Google I/O 2025: Highlights &amp; Key Takeaways</div><div class="pub-type">Tech News &middot; Event</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/made-on-youtube-2025-event-highlights/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Made on YouTube 2025: Event Highlights</div><div class="pub-type">Tech News &middot; Event</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-find-jobs-on-linkedin/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Find Jobs on LinkedIn: Step-by-Step</div><div class="pub-type">Career &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/linkedin-101-what-is-linkedin-all-about/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">LinkedIn 101: What is LinkedIn All About?</div><div class="pub-type">Career &middot; Explainer</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/how-to-start-a-career-in-cybersecurity-2024-guide/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">How to Start a Career in Cybersecurity: 2024 Guide</div><div class="pub-type">Cybersecurity &middot; Career</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/community-management-a-beginners-guide/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Community Management: A Beginner's Guide</div><div class="pub-type">Community &middot; Guide</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/creaitz-partnership-with-web3nigeria/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Creaitz Partners with Web3Nigeria</div><div class="pub-type">Community &middot; Web3</div><div class="pub-cta">Read Article</div></a>
+      <a href="https://creaitz.com/s-a-s-creaitz-recap/" target="_blank" class="pub-card" data-cat="tech"><div class="pub-outlet"><div class="pdot"></div>Creaitz Blog</div><div class="pub-title">Skills &amp; Strategy Summit: Creaitz Recap</div><div class="pub-type">Community &middot; Events</div><div class="pub-cta">Read Article</div></a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="slbl">Skills &amp; Tools</div>
+    <h2 class="stitle">The full <em>toolkit</em></h2>
+    <div class="skg reveal">
+      <div class="skb"><div class="skt">SEO &amp; Search</div><div class="skp"><span class="sp">On-page SEO</span><span class="sp">Technical SEO</span><span class="sp">Keyword Research</span><span class="sp">GEO</span><span class="sp">AEO</span><span class="sp">LLM Optimisation</span><span class="sp">Yoast SEO</span></div></div>
+      <div class="skb"><div class="skt">Analytics &amp; Tools</div><div class="skp"><span class="sp">Google Analytics</span><span class="sp">Search Console</span><span class="sp">SEMrush</span><span class="sp">Ahrefs</span><span class="sp">WordPress</span><span class="sp">Sanity</span><span class="sp">Glimpse</span><span class="sp">Canva</span><span class="sp">Grammarly</span></div></div>
+      <div class="skb"><div class="skt">Content &amp; Strategy</div><div class="skp"><span class="sp">Content Strategy</span><span class="sp">Digital PR</span><span class="sp">Content Marketing</span><span class="sp">Email Marketing</span><span class="sp">Ad Copy</span><span class="sp">Social Media Copy</span><span class="sp">B2B Content</span></div></div>
+      <div class="skb"><div class="skt">Soft Skills</div><div class="skp"><span class="sp">Creative Thinking</span><span class="sp">Attention to Detail</span><span class="sp">Adaptability</span><span class="sp">Team Leadership</span><span class="sp">Editorial Direction</span><span class="sp">Critical Thinking</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="slbl">Get In Touch</div>
+    <h2 class="stitle">Let&rsquo;s make something<br/><em>the internet can&rsquo;t ignore</em></h2>
+    <div class="ctg reveal">
+      <div class="ctl">
+        <p>Need a content strategist who actually moves the needle? SEO overhaul, full content strategy, digital PR, AEO/GEO &mdash; open to the right projects and collaborations.</p>
+        <div class="clinks">
+          <a href="mailto:raphaelfabunmi@gmail.com?subject=Project%20Inquiry" class="clink"><div class="clic">&#9993;</div>raphaelfabunmi@gmail.com</a>
+          <a href="tel:+2347066709165" class="clink"><div class="clic">&#128222;</div>+234-706-6709165</a>
+          <a href="https://linkedin.com/in/fabunmi-raphael" target="_blank" class="clink"><div class="clic">in</div>linkedin.com/in/fabunmi-raphael</a>
+          <a href="https://instagram.com/fabunmi_raphael" target="_blank" class="clink"><div class="clic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>@fabunmi_raphael</a>
+        </div>
+      </div>
+      <div class="cform">
+        <div><label class="flbl">Your Name</label><input type="text" class="finput" placeholder="Jane Doe"/></div>
+        <div><label class="flbl">Email</label><input type="email" class="finput" placeholder="jane@company.com"/></div>
+        <div><label class="flbl">Message</label><textarea class="ftarea" placeholder="Tell me about your project..."></textarea></div>
+        <button class="fsub" id="fsub" onclick="sendForm()">Send Message &rarr;</button>
+        <p style="font-size:.68rem;color:var(--muted);margin-top:.5rem;line-height:1.5">Clicking send opens your email client pre-addressed to Raphael.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fcopy">&copy; 2025 <span>Raphael Fabunmi</span> &middot; Content Strategist &amp; Digital Marketing Expert</div>
+  <a href="#hero" class="fup">&#8593; Back to top</a>
+</footer>
+
+<script>
+(function(){
+  var cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  function tc(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(tc);}
+  tc();
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.2)';cur2.style.opacity='.9';});
+    el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';cur2.style.opacity='.5';});
+  });
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});
+    },{threshold:0.05});
+    document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('on');});
+  }
+  // Fallback: show all reveals after 1s
+  setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('on');});},1000);
+
+  // Count-up for stats
+  function countUp(el){
+    var target=parseInt(el.getAttribute('data-val')),sfx=el.getAttribute('data-sfx')||'';
+    var c=0,inc=target/60;
+    var t=setInterval(function(){
+      c=Math.min(c+inc,target);
+      el.textContent=(target>999?Math.round(c).toLocaleString():Math.round(c))+sfx;
+      if(c>=target)clearInterval(t);
+    },25);
+  }
+  var done=false;
+  function runC(){if(done)return;done=true;document.querySelectorAll('[data-val]').forEach(countUp);}
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){runC();so.disconnect();}});},{threshold:0.1});
+    var sr=document.querySelector('.sr');if(sr)so.observe(sr);
+  }
+  setTimeout(runC,2000);
+
+  // Filter
+  window.filterCards=function(cat,btn){
+    document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on');});
+    btn.classList.add('on');
+    document.querySelectorAll('.pub-card').forEach(function(c){
+      c.style.display=(cat==='all'||c.getAttribute('data-cat')===cat)?'flex':'none';
+    });
+  };
+
+  // Contact form -> mailto
+  window.sendForm=function(){
+    var btn=document.getElementById('fsub');
+    var name=document.querySelector('.finput[type="text"]').value||'';
+    var email=document.querySelector('.finput[type="email"]').value||'';
+    var msg=document.querySelector('.ftarea').value||'';
+    if(!msg.trim()){alert('Please write a message first.');return;}
+    var sub=encodeURIComponent('Project Inquiry - '+(name||'Portfolio Visitor'));
+    var bod=encodeURIComponent('Hi Raphael,\n\n'+msg+'\n\nFrom: '+name+(email?' ('+email+')':''));
+    window.location.href='mailto:raphaelfabunmi@gmail.com?subject='+sub+'&body='+bod;
+    btn.textContent='Opening email...';
+    btn.style.background='#2E7D32';btn.style.color='#fff';
+    setTimeout(function(){btn.textContent='Send Message';btn.style.background='';btn.style.color='';},3000);
+  };
+
+  // Nav shrink
+  window.addEventListener('scroll',function(){
+    var n=document.getElementById('topnav');
+    if(n)n.style.padding=window.scrollY>80?'.7rem 5%':'1.1rem 5%';
+  });
+})();
+</script>
+</body>
+</html>
